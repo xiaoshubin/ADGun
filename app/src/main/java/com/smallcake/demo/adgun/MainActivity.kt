@@ -3,7 +3,6 @@ package com.smallcake.demo.adgun
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -24,9 +23,6 @@ class MainActivity : AppCompatActivity() {
                 jumpAccessibilityServiceSettings()
             }
         }
-
-
-
     }
 
     private fun jumpAccessibilityServiceSettings() {
@@ -44,12 +40,10 @@ class MainActivity : AppCompatActivity() {
     private fun refreshServiceStatusUI() {
         if (ADGunService.isServiceEnable) {
             mServiceStatusTv.text = "跳过广告服务状态：已开启"
-            mToOpenBt.visibility = View.GONE
+            mToOpenBt.text="去关闭"
         } else {
             mServiceStatusTv.text = "跳过广告服务状态：未开启"
-            mToOpenBt.visibility = View.VISIBLE
+            mToOpenBt.text="去开启"
         }
     }
-
-
 }
